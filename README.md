@@ -1,5 +1,12 @@
 # React + Vite
 
+## API configuration
+
+Set `VITE_API_BASE_URL` to the backend API root when deploying the frontend, for
+example `https://your-backend-host/api/`. The deployed backend must allow the
+frontend origin in its CORS settings. When this variable is not set, local
+development uses `http://127.0.0.1:8000/api/`.
+
 This template provides a minimal setup to get React working in Vite with HMR and some Oxlint rules.
 
 Currently, two official plugins are available:

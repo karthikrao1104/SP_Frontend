@@ -1,7 +1,7 @@
 import axios from "axios";
 
 const api = axios.create({
-    baseURL: "http://127.0.0.1:8000/api/",
+    baseURL: import.meta.env.VITE_API_BASE_URL || "https://sp-backend-2-5jw2.onrender.com/api/",
     headers: {
         "Content-Type": "application/json",
     },
@@ -48,12 +48,9 @@ api.interceptors.response.use(
 
             try {
 
-                const response = await axios.post(
-                    "http://127.0.0.1:8000/api/accounts/token/refresh/",
-                    {
-                        refresh: refreshToken
-                    }
-                );
+                const response = await api.post("accounts/token/refresh/", {
+                    refresh: refreshToken
+                });
 
                 const newAccessToken = response.data.access;
 
