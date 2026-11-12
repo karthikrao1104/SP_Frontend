@@ -51,11 +51,7 @@ function Register() {
         <div className="auth-page">
             <div className="auth-card">
 
-                <div className="auth-logo">
-                    <div className="auth-logo-icon">🎓</div>
-                    <h2 className="auth-title">Create Account</h2>
-                    <p className="auth-subtitle">Register for a student account</p>
-                </div>
+                <h2 className="auth-title">Student Registration</h2>
 
                 {error && <div className="auth-error">{error}</div>}
 

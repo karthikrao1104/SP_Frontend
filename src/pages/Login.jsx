@@ -42,11 +42,7 @@ function Login() {
         <div className="auth-page">
             <div className="auth-card">
 
-                <div className="auth-logo">
-                    <div className="auth-logo-icon">🎓</div>
-                    <h2 className="auth-title">Welcome Back</h2>
-                    <p className="auth-subtitle">Sign in to your student account</p>
-                </div>
+                <h2 className="auth-title">Student Login</h2>
 
                 {error && <div className="auth-error">{error}</div>}
 
