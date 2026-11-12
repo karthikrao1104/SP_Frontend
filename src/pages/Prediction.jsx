@@ -1,8 +1,19 @@
 
 import { useState, useEffect, useCallback } from "react";
+import { useAuth } from "../context/AuthContext";
+import { useNavigate } from "react-router-dom";
 import api from "../services/api";
 
 function Prediction() {
+
+    const { logout } = useAuth();
+    const navigate = useNavigate();
+
+    // Logout
+    const handleLogout = () => {
+        logout();
+        navigate("/login");
+    };
 
     // Prediction method
     const [activeTab, setActiveTab] = useState("manual");
@@ -335,6 +346,14 @@ function Prediction() {
                     <p>
                         Predict student academic performance using Machine Learning.
                     </p>
+
+                    <button
+                        type="button"
+                        className="logout-button"
+                        onClick={handleLogout}
+                    >
+                        Logout
+                    </button>
                 </div>
 
                 {/* MESSAGES */}

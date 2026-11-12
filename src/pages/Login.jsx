@@ -39,51 +39,53 @@ function Login() {
 
     return (
 
-        <div>
+        <div className="auth-page">
+            <div className="auth-card">
 
-            <h1>Student Login</h1>
-
-            {error && <p style={{ color: "red" }}>{error}</p>}
-
-            <form onSubmit={handleSubmit}>
-
-                <div>
-                    <label>Username</label>
-
-                    <input
-                        type="text"
-                        value={username}
-                        onChange={(e) => setUsername(e.target.value)}
-                        required
-                    />
+                <div className="auth-logo">
+                    <div className="auth-logo-icon">🎓</div>
+                    <h2 className="auth-title">Welcome Back</h2>
+                    <p className="auth-subtitle">Sign in to your student account</p>
                 </div>
 
-                <br />
+                {error && <div className="auth-error">{error}</div>}
 
-                <div>
-                    <label>Password</label>
+                <form className="auth-form" onSubmit={handleSubmit}>
 
-                    <input
-                        type="password"
-                        value={password}
-                        onChange={(e) => setPassword(e.target.value)}
-                        required
-                    />
-                </div>
+                    <div className="form-group">
+                        <label>Username</label>
+                        <input
+                            type="text"
+                            value={username}
+                            onChange={(e) => setUsername(e.target.value)}
+                            placeholder="Enter your username"
+                            required
+                        />
+                    </div>
 
-                <br />
+                    <div className="form-group">
+                        <label>Password</label>
+                        <input
+                            type="password"
+                            value={password}
+                            onChange={(e) => setPassword(e.target.value)}
+                            placeholder="Enter your password"
+                            required
+                        />
+                    </div>
 
-                <button type="submit">
-                    Login
-                </button>
+                    <button type="submit" className="auth-submit-btn">
+                        Login
+                    </button>
 
-            </form>
+                </form>
 
-            <p>
-                Don't have an account?
-                <Link to="/register"> Register</Link>
-            </p>
+                <p className="auth-footer">
+                    Don't have an account?
+                    <Link to="/register"> Register</Link>
+                </p>
 
+            </div>
         </div>
     );
 }

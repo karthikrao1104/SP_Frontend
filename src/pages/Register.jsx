@@ -48,63 +48,66 @@ function Register() {
 
     return (
 
-        <div>
+        <div className="auth-page">
+            <div className="auth-card">
 
-            <h1>Student Registration</h1>
-
-            {error && <p style={{ color: "red" }}>{error}</p>}
-
-            {message && <p style={{ color: "green" }}>{message}</p>}
-
-            <form onSubmit={handleSubmit}>
-
-                <div>
-                    <label>Username</label>
-                    <input
-                        type="text"
-                        value={username}
-                        onChange={(e) => setUsername(e.target.value)}
-                        required
-                    />
+                <div className="auth-logo">
+                    <div className="auth-logo-icon">🎓</div>
+                    <h2 className="auth-title">Create Account</h2>
+                    <p className="auth-subtitle">Register for a student account</p>
                 </div>
 
-                <br />
+                {error && <div className="auth-error">{error}</div>}
 
-                <div>
-                    <label>Email</label>
-                    <input
-                        type="email"
-                        value={email}
-                        onChange={(e) => setEmail(e.target.value)}
-                        required
-                    />
-                </div>
+                {message && <div className="auth-success">{message}</div>}
 
-                <br />
+                <form className="auth-form" onSubmit={handleSubmit}>
 
-                <div>
-                    <label>Password</label>
-                    <input
-                        type="password"
-                        value={password}
-                        onChange={(e) => setPassword(e.target.value)}
-                        required
-                    />
-                </div>
+                    <div className="form-group">
+                        <label>Username</label>
+                        <input
+                            type="text"
+                            value={username}
+                            onChange={(e) => setUsername(e.target.value)}
+                            placeholder="Choose a username"
+                            required
+                        />
+                    </div>
 
-                <br />
+                    <div className="form-group">
+                        <label>Email</label>
+                        <input
+                            type="email"
+                            value={email}
+                            onChange={(e) => setEmail(e.target.value)}
+                            placeholder="Enter your email"
+                            required
+                        />
+                    </div>
 
-                <button type="submit">
-                    Register
-                </button>
+                    <div className="form-group">
+                        <label>Password</label>
+                        <input
+                            type="password"
+                            value={password}
+                            onChange={(e) => setPassword(e.target.value)}
+                            placeholder="Create a password"
+                            required
+                        />
+                    </div>
 
-            </form>
+                    <button type="submit" className="auth-submit-btn">
+                        Register
+                    </button>
 
-            <p>
-                Already have an account?
-                <Link to="/login"> Login</Link>
-            </p>
+                </form>
 
+                <p className="auth-footer">
+                    Already have an account?
+                    <Link to="/login"> Login</Link>
+                </p>
+
+            </div>
         </div>
     );
 }

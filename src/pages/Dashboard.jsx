@@ -95,14 +95,14 @@ function Dashboard() {
 
 
                 {/* Prediction Button */}
-                <section>
+                <section className="prediction-action-section">
                     <h2>Student Prediction</h2>
 
                     <p>
                         Predict student performance using the ML model.
                     </p>
 
-                    <button onClick={() => navigate("/prediction")}>
+                    <button className="start-prediction-btn" onClick={() => navigate("/prediction")}>
                         Start Prediction
                     </button>
                 </section>
