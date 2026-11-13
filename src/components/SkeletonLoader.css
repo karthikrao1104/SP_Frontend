@@ -1,0 +1,106 @@
+.skeleton {
+    background: #e2e5eb;
+    background-image: linear-gradient(
+        90deg,
+        #e2e5eb 0px,
+        #eceff5 50%,
+        #e2e5eb 100%
+    );
+    background-size: 200% 100%;
+    animation: shimmer 1.5s infinite linear;
+    border-radius: 4px;
+    display: block;
+}
+
+.skeleton-text {
+    height: 14px;
+    margin-bottom: 8px;
+    width: 100%;
+    border-radius: 4px;
+}
+
+.skeleton-circular {
+    border-radius: 50%;
+    width: 40px;
+    height: 40px;
+}
+
+.skeleton-rectangular {
+    border-radius: 6px;
+    height: 80px;
+    width: 100%;
+}
+
+.skeleton-card {
+    border-radius: 8px;
+    height: 110px;
+    width: 100%;
+    background: #ffffff;
+    border: 1px solid #e0e0e0;
+    padding: 20px;
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 12px;
+}
+
+.skeleton-card::before {
+    content: "";
+    width: 60%;
+    height: 12px;
+    background: #e2e5eb;
+    background-image: linear-gradient(90deg, #e2e5eb 0px, #eceff5 50%, #e2e5eb 100%);
+    background-size: 200% 100%;
+    animation: shimmer 1.5s infinite linear;
+    border-radius: 4px;
+}
+
+.skeleton-card::after {
+    content: "";
+    width: 40%;
+    height: 28px;
+    background: #e2e5eb;
+    background-image: linear-gradient(90deg, #e2e5eb 0px, #eceff5 50%, #e2e5eb 100%);
+    background-size: 200% 100%;
+    animation: shimmer 1.5s infinite linear;
+    border-radius: 4px;
+}
+
+.skeleton-group {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    width: 100%;
+}
+
+/* Skeleton table row styling */
+.skeleton-table-row td {
+    padding: 14px 12px !important;
+}
+
+.skeleton-table-cell-placeholder {
+    height: 18px;
+    width: 100%;
+    background: #e2e5eb;
+    background-image: linear-gradient(
+        90deg,
+        #e2e5eb 0px,
+        #eceff5 50%,
+        #e2e5eb 100%
+    );
+    background-size: 200% 100%;
+    animation: shimmer 1.5s infinite linear;
+    border-radius: 4px;
+}
+
+@keyframes shimmer {
+    0% {
+        background-position: 200% 0;
+    }
+    100% {
+        background-position: -200% 0;
+    }
+}
+
